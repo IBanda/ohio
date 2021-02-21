@@ -28,14 +28,13 @@ body {
   inherits: false;
 }
 .level-indicator {
-  transition: width 1000ms;
   width: 0;
   &.is-visible {
-    animation: counter 1s 1 ease-in-out;
-    animation-fill-mode: forwards;
-    counter-reset: num var(--num);
+    --num: 73;
+    transition: --num 1s, width 1000ms;
+    counter-set: num var(--num);
     &::after {
-      content: counter(num);
+      content: counter(num) '%';
       background-color: black;
       position: absolute;
       display: flex;
