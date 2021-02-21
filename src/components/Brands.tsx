@@ -9,7 +9,7 @@ export default function Brands() {
             className="mb-8 md:mb-0 brand bg-white cursor-pointer flex justify-center  "
           >
             <img
-              className="w-32 md:w-24 lg:w-28 xl:w-36"
+              className="w-24 md:w-24 lg:w-28 xl:w-36"
               src={`/images/oh_logo_${brand}.png`}
               alt={`oh_logo_${brand}`}
             />
