@@ -2,12 +2,17 @@ import { useCallback, useEffect, useRef } from 'react';
 
 export default function useObserver(cb: () => void) {
   const observerRef = useRef<IntersectionObserver>();
+  const animateRef = useRef<boolean>(true);
+
   useEffect(() => {
     const observer = new window.IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            cb();
+            if (animateRef.current) {
+              cb();
+              animateRef.current = false;
+            }
           }
         });
       },
