@@ -10,7 +10,7 @@ export default function MobileMenu() {
         <img className="w-5 " src="/images/bars.png" alt="menu" />
       </Button>
       <nav
-        className={` fixed  bg-black bg-opacity-90 w-full h-full top-0 left-0 z-10  transition-transform transition-opacity delay-75 duration-500 transform-gpu ${
+        className={` fixed  bg-black bg-opacity-90 w-full h-full top-0 left-0 z-20  transition-transform transition-opacity delay-75 duration-500 transform-gpu ${
           isMenuOpen ? 'opacity-1' : '-translate-x-full opacity-0'
         }`}
       >
