@@ -2,14 +2,17 @@ import { Subtitle, Title } from './Typography';
 import useObserver from '../utils/useObserver';
 import { useEffect, useRef } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
+import animateValue from '../utils/animateValue';
 
 export default function GettingStarted() {
   const projectRef = useRef<HTMLHeadingElement>(null);
   const campaignRef = useRef<HTMLHeadingElement>(null);
 
   const { getObserver } = useObserver(() => {
-    projectRef.current?.classList.add('is-visible');
-    campaignRef.current?.classList.add('is-visible');
+    if (projectRef.current && campaignRef.current) {
+      animateValue(projectRef.current, 0, 390, 1000);
+      animateValue(campaignRef.current, 0, 248, 1000);
+    }
   });
 
   useEffect(() => {
